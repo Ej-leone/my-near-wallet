@@ -20,7 +20,6 @@ import { actions as importZeroBalanceAccountActions } from '../../redux/slices/i
 import { importZeroBalanceAccountPhrase } from '../../redux/slices/importZeroBalanceAccount/importAccountThunks';
 import { selectActionsPending, selectStatusLocalAlert, selectStatusMainLoader } from '../../redux/slices/status';
 import isValidPrivateKey from '../../utils/isValidPrivateKey';
-import isValidSeedPhrase from '../../utils/isValidSeedPhrase';
 import parseFundingOptions from '../../utils/parseFundingOptions';
 import Container from '../common/styled/Container.css';
 import RecoverAccountPrivateKeyForm from './RecoverAccountPrivateKeyForm';

@@ -7,6 +7,10 @@ const { getKeyPairFromSeedPhrase } = require("./helpers");
 const { walletNetwork } = require("./config");
 
 class NearAPIJsConnection {
+
+   
+
+
     static getDefaultConfig = () => ({
         networkId: walletNetwork,
         nodeUrl: process.env.NODE_URL || "https://rpc.testnet.near.org",
@@ -24,8 +28,10 @@ class NearAPIJsConnection {
     }
 
     getConnection() {
+        
         return connect(this.config);
     }
+
 
     async setKeyPair({ accountId, keyPair }) {
         await this.config.keyStore.setKey(this.config.networkId, accountId, keyPair);
