@@ -1289,6 +1289,31 @@ export default class Wallet {
         }
     }
 
+    async recoverAccountPrivateKey(
+        privateKey,
+    ) {
+      
+        return await this.recoverAccountFromPrivateKey(
+            privateKey
+        );
+    }
+
+    async recoverAccountFromPrivateKey (privateKey) {
+        const keyPair = nearApiJs.utils.KeyPair.fromString(privateKey);
+        const publicKey = keyPair.publicKey.toString();
+        const accountId = await keyPair.getAccountId();
+        const near = await nearApiJs.connect({
+            keyStore: new nearApiJs.keyStores.InMemoryKeyStore(),
+            nodeUrl: 'https://rpc.mainnet.near.org',
+            networkId: 'mainnet',
+        });
+        const account = await near.account(accountId);
+        await account.fetchState();
+        return { account, publicKey };
+    }
+
+
+
     async signAndSendTransactions(transactions, accountId = this.accountId) {
         const account = await this.getAccount(accountId);
 
