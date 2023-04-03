@@ -140,6 +140,22 @@ const RecoverAccount = ({
                             <Translate id='button.recoverAccount' />
                         </FormButton>
                     </Option>
+                  
+                    <Option>
+                        <Header icon={PhraseIcon}><Translate id='recoverAccount.privatekey.title' /></Header>
+                        <P><Translate id='recoverAccount.privatekey.desc' /></P>
+                        <FormButton
+                            color='seafoam-blue'
+                            linkTo={`/recover-private-key${locationSearch}`}
+                            onClick={() => Mixpanel.track('IE Click private key recovery button')}
+                            data-test-id="recoverAccountWithPrivateKeyButton"
+                            id='IE Click private key recovery button'
+                        >
+                            <Translate id='button.recoverAccount' />
+                        </FormButton>
+                    </Option>
+                  
+                  
                     <Option>
                         <Header icon={HardwareDeviceIcon}><Translate id='recoverAccount.ledger.title' /></Header>
                         <P><Translate id='recoverAccount.ledger.desc' /></P>

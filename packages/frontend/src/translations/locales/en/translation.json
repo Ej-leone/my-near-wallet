@@ -973,6 +973,10 @@
         "phrase": {
             "desc": "Make sure you have your 12 word recovery phrase, then click below to begin the recovery process.",
             "title": "Passphrase"
+        },
+        "privatekey":{
+            "desc": "Make sure you have your Private Key, then click below to begin the recovery process.",
+            "title": "Private Key"
         }
     },
     "recoverSeedPhrase": {
@@ -989,6 +993,22 @@
         "seedPhraseInput": {
             "placeholder": "correct horse battery staple...",
             "title": "Passphrase (12 words)"
+        }
+    },
+    "recoverPrivateKey": {
+        "couldNotFindAccountModal": {
+            "buttonImport": "Import Anyway",
+            "desc": {
+                "ledger": "We couldn't find any <b>active account(s)</b> using the provided Ledger key. This could be because the account has no activity yet.",
+                "phrase": "We couldn't find any <b>active account(s)</b> using the provided passphrase. This could be because the passphrase is incorrect, or because the account has no activity yet."
+            },
+            "title": "Couldn't find account"
+        },
+        "pageText": "Enter the backup Private Key associated with the account.",
+        "pageTitle": "Recover using Private Key",
+        "seedPhraseInput": {
+            "placeholder": "5c04febb55c27add02...",
+            "title": "Private Key (64 char)"
         }
     },
     "recoverWithLink": {
